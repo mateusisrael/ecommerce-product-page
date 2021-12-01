@@ -36,22 +36,26 @@ const Header: FunctionComponent<HeaderProps> = () => {
   return (
     <S.Header>
       <S.View>
-      <nav>
+        <S.Margin margin={'0 1rem 0 0'}>
+          <nav>
+            <figure>
+              <img src={menuSVG} />
+            </figure>
+            {/* <ul>
+              {menuItems.map((item, i) => <li key={i}>{item.name}</li>)}
+            </ul> */}
+          </nav>
+        </S.Margin>
         <figure>
-          <img src={menuSVG} />
+          <img src={logoSVG} />
         </figure>
-        {/* <ul>
-          {menuItems.map((item, i) => <li key={i}>{item.name}</li>)}
-        </ul> */}
-      </nav>
-      <figure>
-        <img src={logoSVG} />
-      </figure>
       </S.View>
       <S.View>
-        <figure>
-          <img src={cartSVG} />
-        </figure>
+        <S.Margin margin={'0 1rem 0 0'}>
+          <figure>
+            <img src={cartSVG} />
+          </figure>
+        </S.Margin>
 
         <S.Profile src={avatarPNG} />
       </S.View>
