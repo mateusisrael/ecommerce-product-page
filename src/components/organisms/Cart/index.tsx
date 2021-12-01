@@ -1,18 +1,22 @@
 import { FunctionComponent } from 'react';
-import { Section, Overlay, Header, Content } from './styles'
+import { Section, Overlay, HGroup, Content } from './styles';
 
 interface CartProps {
   
 }
  
 const Cart: FunctionComponent<CartProps> = () => {
+  const cartContent = []
   return (
     <Overlay>
       <Section>
-        <Header>Cart</Header>
-        <Content>
-          <p>Your cart is empity</p>
-        </Content>
+        <HGroup><h1>Cart</h1></HGroup>
+
+        {cartContent.length <= 0  && (
+          <Content>
+            <p>Your cart is empity</p>
+          </Content>
+        )}
       </Section>
     </Overlay>
   );

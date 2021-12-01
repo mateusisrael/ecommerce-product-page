@@ -11,6 +11,8 @@ export const Overlay = styled.div`
 `;
 
 export const Section = styled.section`
+  display: flex;
+  flex-direction: column;
   min-width: 300px;
   width: 92%;
   height: 250px;
@@ -21,11 +23,15 @@ export const Section = styled.section`
   -moz-box-shadow: 0px 53px 54px -47px rgba(196,196,196,1);
 `;
 
-export const Header = styled.header`
+export const HGroup = styled.hgroup`
   padding: 1.5rem 0 1.5rem 1.5rem;
   border-bottom: 1px solid silver;
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 `;
