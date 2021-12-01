@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, Dispatch, SetStateAction } from 'react';
 import * as S from './styles';
 
 import menuSVG from '../../../images/icon-menu.svg';
@@ -7,10 +7,10 @@ import cartSVG from '../../../images/icon-cart.svg';
 import avatarPNG from '../../../images/image-avatar.png';
 
 interface HeaderProps {
-  
+  handleModal: any
 }
  
-const Header: FunctionComponent<HeaderProps> = () => {
+const Header: FunctionComponent<HeaderProps> = ({ handleModal }) => {
   const menuItems = [
     {
       name: "Collections",
@@ -39,7 +39,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
         <S.Margin margin={'0 1rem 0 0'}>
           <nav>
             <figure>
-              <img src={menuSVG} />
+              <img alt={'menu icon'} src={menuSVG} />
             </figure>
             {/* <ul>
               {menuItems.map((item, i) => <li key={i}>{item.name}</li>)}
@@ -47,13 +47,13 @@ const Header: FunctionComponent<HeaderProps> = () => {
           </nav>
         </S.Margin>
         <figure>
-          <img src={logoSVG} />
+          <img alt={'logo'} src={logoSVG} />
         </figure>
       </S.View>
       <S.View>
         <S.Margin margin={'0 1rem 0 0'}>
           <figure>
-            <img src={cartSVG} />
+            <img alt={'cart icon'} onClick={() => handleModal('cart')} src={cartSVG} />
           </figure>
         </S.Margin>
 

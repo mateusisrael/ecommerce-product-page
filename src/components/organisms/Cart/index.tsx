@@ -1,22 +1,24 @@
 import { FunctionComponent } from 'react';
+import { IProduct } from '../../../api/data';
 import { Section, Overlay, HGroup, Content } from './styles';
 
 interface CartProps {
-  
+  products?: [IProduct]
 }
  
-const Cart: FunctionComponent<CartProps> = () => {
-  const cartContent = []
+const Cart: FunctionComponent<CartProps> = ({ products }) => {
+
   return (
+    console.log('Products:', products),
     <Overlay>
       <Section>
         <HGroup><h1>Cart</h1></HGroup>
 
-        {cartContent.length <= 0  && (
+        {/* {products && products.length <= 0  && ( */}
           <Content>
-            <p>Your cart is empity</p>
+            <p>Your cart is empty.</p>
           </Content>
-        )}
+        {/* )} */}
       </Section>
     </Overlay>
   );

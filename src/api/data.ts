@@ -1,6 +1,15 @@
-import FALL_LIMITED_EDITION_THUMB from '../images/image-product-1-thumbnail.png'
+import FALL_LIMITED_EDITION_THUMB from '../images/image-product-1-thumbnail.jpg'
 
-export const products = [
+export interface IProduct {
+  id: number,
+  title: string,
+  description: string
+  thumb: string,
+  price: number,
+  discountPercentage: number,
+}
+
+export const products: [IProduct] = [
   {
     id: 1,
     title: 'Fall Limited Edition Sneakers',
