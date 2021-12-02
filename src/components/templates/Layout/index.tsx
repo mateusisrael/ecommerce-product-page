@@ -18,15 +18,13 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
     "cart": false,
     "menu": false
   });
-  // const [cartModal, setCartModal] = useState(false);
+
   const [inCart, setInCart] = useState<undefined | [IProduct]>([data[0]])
   // useEffect(() => {
   //   setTimeout(() => setProducts(data), 3000)
   // }, [])
 
   const handleModal = (modal: string) => {
-    // const newModals = modals
-    // newModals[modal] = !newModals[modal]
     setModals({
       ...modals,
       [modal]: !modals['cart']

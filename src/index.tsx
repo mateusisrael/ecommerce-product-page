@@ -6,6 +6,7 @@ import Layout from './components/templates/Layout';
 import {
   Routes, Route, BrowserRouter as Router
 } from 'react-router-dom';
+import ProductPage from './pages/Product';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +14,7 @@ ReactDOM.render(
       <Layout>
         <Routes>
           <Route path={'/'} element={<h1>Init</h1>} />
-          <Route path={'/schedule'} element={<h1>Schedule</h1>} />
+          <Route path={'/product/:id'} element={<ProductPage />} />
         </Routes>
       </Layout>
     </Router>
