@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const Overlay = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 100vw;
-  height: calc(100vh - 69px - 1rem);
+  width: 100%;
   padding-top: 1rem;
-  background-color: silver;
+  background-color: transparent;
 `;
 
 export const Section = styled.section`
@@ -18,9 +17,10 @@ export const Section = styled.section`
   height: 250px;
   border-radius: .8rem;
   background-color: #fff;
-  box-shadow: 0px 53px 54px -47px rgba(196,196,196,1);
-  -webkit-box-shadow: 0px 53px 54px -47px rgba(196,196,196,1);
-  -moz-box-shadow: 0px 53px 54px -47px rgba(196,196,196,1);
+  box-shadow: 0px 16px 46px -4px rgb(196 196 196);
+  -webkit-box-shadow: 0px 16px 46px -4px rgb(196 196 196);
+  -moz-box-shadow: 0px 16px 46px -4px rgb(196 196 196);
+  z-index: 2;
 `;
 
 export const HGroup = styled.hgroup`

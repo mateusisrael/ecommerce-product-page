@@ -20,11 +20,6 @@ export const View = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-
-  /* &:first-child {
-    background-color: red;
-    margin-right: 1rem;
-  } */
 `;
 
 type MarginProps = {
@@ -32,4 +27,41 @@ type MarginProps = {
 }
 export const Margin = styled.div<MarginProps>`
   margin: ${props => props.margin};
+`;
+
+export const CartButton = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+type DesktopNavProps = {
+  margin?: string
+}
+export const DesktopNav = styled.nav<DesktopNavProps>`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    margin: ${({ margin }) => margin};
+  }
+`;
+
+export const Ul = styled.ul`
+  display: flex;
+  list-style-type: none;
+  
+  > li {
+    @media (min-width: 768px) {
+      margin: 0 1rem;
+    }
+  }
+`;
+
+export const MenuButton = styled.button`
+  display: none;
+  @media (max-width: 726px) {
+    display: block;
+    border: none;
+    cursor: pointer;
+  }
 `;
