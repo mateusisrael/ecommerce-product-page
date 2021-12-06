@@ -1,13 +1,16 @@
-import { FunctionComponent, MouseEventHandler } from 'react';
+import { FunctionComponent, useState } from 'react';
 import Overlay from '../../atoms/Overlay';
 import * as S from './styles'
 
 import iconClose from '../../../images/icon-close.svg'
+import { setTimeout } from 'timers';
 interface MobileMenuProps {
-  handleClose: MouseEventHandler
+  handleClose: Function
 }
  
 const MobileMenu: FunctionComponent<MobileMenuProps> = ({ handleClose }) => {
+  const [animation, setAnimation] = useState<string>('open');
+
   const menuItems = [
     {
       name: "Collections",
@@ -31,12 +34,19 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ handleClose }) => {
     }
   ]
 
+  const handleBeforeCloes = (): void => {
+    setAnimation('close')
+    setTimeout(() => {
+      handleClose();
+    }, 300) 
+  }
+
   return (
     <>
-      <Overlay onClick={handleClose}/>
-      <S.MobileMenu>
+      <Overlay animation={animation} onClick={handleBeforeCloes}/>
+      <S.MobileMenu animation={animation}>
         <S.TopBox>
-          <S.CloseButton onClick={handleClose}>
+          <S.CloseButton onClick={handleBeforeCloes}>
             <figure>
               <img alt={'Close menu icon button'} src={iconClose}></img>
             </figure>

@@ -1,7 +1,32 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom'
 
-export const MobileMenu = styled.nav`
+const open = keyframes`
+  0%{
+    left: -50%;
+  }
+
+  100%{
+    left: 0;
+  }
+`;
+
+const close = keyframes`
+  0%{
+    left: 0;
+    opacity: 1;
+  }
+
+  100%{
+    left: -90%;
+    opacity: 0;
+  }
+`;
+
+type MobileMenuProps = {
+  animation?: string
+}
+export const MobileMenu = styled.nav<MobileMenuProps>`
   display: none;
   @media (max-width: 768px) {
     display: block;
@@ -12,6 +37,7 @@ export const MobileMenu = styled.nav`
     height: 100vh;
     z-index: 2;
     background-color: #fff;
+    animation: ${(props) => props.animation === 'open' ? open : close} .3s;
   }
 `;
 

@@ -5,9 +5,9 @@ interface OverlayProps extends ContentProps {
   onClick?: MouseEventHandler
 }
 
-const Overlay: FunctionComponent<OverlayProps> = ({ onClick, noColor }) => {
+const Overlay: FunctionComponent<OverlayProps> = ({ onClick, noColor, animation }) => {
   return (
-    <Content onClick={onClick} noColor={noColor}/>
+    <Content animation={animation} onClick={onClick} noColor={noColor}/>
   );
 }
  
